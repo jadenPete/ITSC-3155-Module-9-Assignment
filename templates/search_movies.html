@@ -2,8 +2,23 @@
 
 {% block title %}Movie Rating App | Search Movie Ratings{% endblock %}
 
+{% block head %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/search_movies.css') }}">
+
+	<script defer src="{{ url_for('static', filename='js/search_movies.js') }}"></script>
+{% endblock %}
+
 {% block body %}
-<h1 class="mb-5">Search Movie Ratings</h1>
-<p class="mb-3">Search for a movie rating below</p>
-<!-- TODO: Feature 3 -->
+	<h1 class="mb-5">Search Movie Ratings</h1>
+
+	<p class="mb-3">Search for a movie rating below.</p>
+
+	<div class="d-flex">
+		<input type="text"
+			id="search-input"
+			class="form-control form-control-lg"
+			placeholder="Search for a movie title">
+
+		<button type="button" id="search-button" class="btn btn-primary btn-lg">Search</button>
+	</div>
 {% endblock %}
