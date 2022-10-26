@@ -1,6 +1,5 @@
 from src.models.movie import Movie
 
-
 def test_movie_model():
     movie = Movie('Star Wars', 'George Lucas', 5)
 
