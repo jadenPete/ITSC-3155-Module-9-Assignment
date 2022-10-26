@@ -6,18 +6,18 @@
 <h1 class="mb-5">Create Movie Rating</h1>
 <p class="mb-3">Create a movie rating below</p>
 <!-- TODO: Feature 2 -->
-<form method = "get" action = "/movies">
+<form method = "post" action = "/movies">
     <div class="form-group">
       <label for="Title">Title</label>
-      <input type="text" class="form-control" id="Title" aria-describedby="Title" placeholder="Enter Title">
+      <input name ="movie_title" type="text" class="form-control" id="Title" aria-describedby="Title" placeholder="Enter Title" required>
     </div>
     <div class="form-group">
       <label for="Director">Director</label>
-      <input type="text" class="form-control" id="Enter Director" placeholder="Enter Director">
+      <input name = "movie_director" type="text" class="form-control" id="Enter Director" placeholder="Enter Director" required>
     </div>
     <div class="form-group">
         <label for="Rating">Rating</label>
-        <input type="number" class="form-control" id="Rating" placeholder="Enter Rating 1-5">
+        <input name="movie_rating" type="number" class="form-control" id="Rating" placeholder="Enter Rating 1-5" min="1" max="5" required>
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
