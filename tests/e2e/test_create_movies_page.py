@@ -21,10 +21,6 @@ def test_movie_created_end(test_app):
     assert b"Larry Charles" in response.data
     assert b"5" in response.data
 
-    test_movie = Movie("Borat! Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan", "Larry Charles", 5)
-    all_movies = movie_repository.get_all_movies()
-    print(test_movie.__dict__)
-
     same_movie = False
 
     for movie in all_movies:
