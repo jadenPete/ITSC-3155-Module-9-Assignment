@@ -5,6 +5,9 @@
 {% block body %}
 <h1 class="mb-5">Create Movie Rating</h1>
 <p class="mb-3">Create a movie rating below</p>
+
+{{ message|safe }}
+
 <!-- TODO: Feature 2 -->
 <form method = "post" action = "/movies">
     <div class="form-group">
