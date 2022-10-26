@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template
+from flask import Flask, redirect, render_template, request
 
 from src.repositories.movie_repository import get_movie_repository
 
@@ -27,6 +27,16 @@ def create_movies_form():
 def create_movie():
     # TODO: Feature 2
     # After creating the movie in the database, we redirect to the list all movies page
+
+    movie_title = request.form.get('movie_title')
+    movie_director = request.form.get('movie_director')
+    movie_rating = request.form.get('movie_rating', type=int)
+
+    if movie_title is None or movie_director is None or movie_rating is None or movie_rating < 0 or movie_rating >5:
+        message = """<div class="alert alert-danger" role="invalid">Please enter a number between 1 and 5."""
+        return render_template('create_movies_form.html', create_rating_active = False, message = (message))
+    else:
+        movie_repository.create_movie(movie_title, movie_director, movie_rating)
     return redirect('/movies')
 
 
