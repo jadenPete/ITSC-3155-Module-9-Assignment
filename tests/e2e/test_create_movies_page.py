@@ -22,9 +22,3 @@ def test_movie_created_end(test_app):
     assert b"5" in response.data
 
     same_movie = False
-
-    for movie in all_movies:
-        if movie.__dict__ == test_movie.__dict__:
-            same_movie = True
-
-    assert same_movie
